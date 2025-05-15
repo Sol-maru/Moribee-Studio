@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Column Layout with Flexbox</title>
+    <link rel="stylesheet" type="text/css" href="normalize_v8.0.1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        background-color: #FFF8E7;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: 	#f8ead6; 
+        border-bottom: 1px solid #EFDCC8;
+        flex-wrap: wrap;
+      }
+
+      .navbar a {
+        text-decoration: none;
+        color: #5A4B41; 
+        font-weight: 600;
+        font-size: 1.35rem;
+        padding: 0.5rem 1rem;
+        transition: background-color 0.2s ease;
+      }
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+
+    .navbar a:hover {
+      background-color: #F5D7AF; 
+      border-radius: 4px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 3rem; 
+        margin-bottom: 3rem;
+        transform: translateX(-1rem);
+      }
+      .header-image-container {
+        display: flex;
+        justify-content: center;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+
+      .header-image-container img {
+        width: 100%;
+        max-width: 1000px;
+        height: auto;
+        border-radius: 12px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .section {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+      }
+
+      .section h2 {
+        margin-bottom: 1rem;
+        font-size: 1.75rem;
+      }
+
+      .image-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem; 
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+
+      .image-grid img {
+        width: 100%;
+        display: block;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+      .studio-intro {
+        font-size: 1.25rem;
+        padding-left: 2rem;
+        max-width: 700px;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+      }
+    </style>
+</head>      
+<body>
+    <h1>Moribee Studio</h1>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="shop.html">Shop</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-image-container">
+      <img src="IMG_/header image.jpg" alt="Header Image">
+    </div>  
+    <p class="studio-intro">Moribee Studio is run by a teen design artist &#58;&#41;</p>
+
+    <div class="section">
+      <h2>Headliners</h2>
+    </div>
+
+    <div class="image-grid">
+      <img src="img1.jpg" alt="Image 1">
+      <img src="img2.jpg" alt="Image 2">
+      <img src="img3.jpg" alt="Image 3">
+    </div>
+</body>
+</html>
