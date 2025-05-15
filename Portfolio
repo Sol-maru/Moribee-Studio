@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Column Layout with Flexbox</title>
+    <link rel="stylesheet" type="text/css" href="normalize_v8.0.1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        background-color: #FFF8E7;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 2rem;
+        background-color: 	#f8ead6; 
+        border-bottom: 1px solid #EFDCC8;
+        flex-wrap: wrap;
+      }
+
+      .navbar a {
+        text-decoration: none;
+        color: #5A4B41; 
+        font-weight: 600;
+        font-size: 1.35rem;
+        padding: 0.5rem 1rem;
+        transition: background-color 0.2s ease;
+      }
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+
+    .navbar a:hover {
+      background-color: #F5D7AF; 
+      border-radius: 4px;
+    }
+  
+      h1 {
+        text-align: center;
+        margin-top: 3rem; 
+        margin-bottom: 3rem;
+        transform: translateX(-1rem);
+      }
+      h3 {
+        padding-left: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      .header-image-container {
+        display: flex;
+        justify-content: center;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+
+      .header-image-container img {
+        width: 100%;
+        max-width: 1000px;
+        height: auto;
+        border-radius: 12px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .fine-arts {
+        column-count: 3;
+        column-gap: 1.5rem;
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+
+      .fine-arts figure {
+        position: relative;
+        margin: 0 0 1.5rem;
+        break-inside: avoid;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      .fine-arts img {
+        width: 100%;
+        display: block;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .fine-arts figcaption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        padding: 0.5rem 1rem;
+        font-size: 0.95rem;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+      }
+
+      .fine-arts figure:hover figcaption {
+        opacity: 1;
+      }
+
+      @media (max-width: 900px) {
+        .fine-arts {
+          column-count: 2;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .fine-arts {
+          column-count: 1;
+        }
+      }
+      .section {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+      }
+
+      .section h2 {
+        margin-bottom: 1rem;
+        font-size: 1.75rem;
+      }
+    </style>
+</head>
+
+<body>
+  <h1>Portfolio</h1>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="shop.html">Shop</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <div class="section">
+    <h2>Fine Arts</h2>
+  </div>
+  <div class="fine-arts">
+    <figure><img src="IMG_/Error; No Explanation.jpg"><figcaption>Error; No Explanation</figcaption></figure>
+    <figure><img src="IMG_/@_Noon.jpg"><figcaption>@_Noon</figcaption></figure>
+    <figure><img src="IMG_/Hind Light.jpg"><figcaption>Hind Light</figcaption></figure>
+    <figure><img src="IMG_/Midnight Blooms.jpg"><figcaption>Midnight Blooms</figcaption></figure>
+    <figure><img src="IMG_/Absinthe.jpg"><figcaption>Absinthe</figcaption></figure>
+    <figure><img src="IMG_/Dreamscapes.jpg"><figcaption>Dreamscapes</figcaption></figure>
+    <figure><img src="IMG_/Him & I.jpg"><figcaption>him & I</figcaption></figure>
+    <figure><img src="IMG_/Neuro_divergent.jpg"><figcaption>Neuro_divergent</figcaption></figure>
+    <figure><img src="IMG_/neuro_typical.jpg"><figcaption>Neuro_typical</figcaption></figure>
+    <figure><img src="IMG_/Sansuhwa.jpg"><figcaption>Sansuhwa</figcaption></figure>
+    <figure><img src="IMG_/Until the last Flower.jpg"><figcaption>Until the last Flower</figcaption></figure>
+    <figure><img src="IMG_/Gardening_inverted.jpg"><figcaption>Gardening_inverted</figcaption></figure>
+    <figure><img src="IMG_/Gardening.jpg"><figcaption>Gardening</figcaption></figure>
+    <figure><img src="IMG_/untitled.jpg"><figcaption>Untitled</figcaption></figure>
+    <figure><img src="IMG_/Through.jpg"><figcaption>Through</figcaption></figure>
+    <figure><img src="IMG_/Koi Pond.jpg"><figcaption>Koi Pond</figcaption></figure>
+    <figure><img src="IMG_/Once I was a Dreamer.jpg"><figcaption>Once I was a Dreamer</figcaption></figure>
+    <figure><img src="IMG_/REM; insomnia.jpg"><figcaption>REM; insomnia</figcaption></figure>
+    <figure><img src="IMG_/SATURATION.jpg"><figcaption>SATURATION</figcaption></figure>
+    <figure><img src="IMG_/Society; Individual.jpg"><figcaption>Society; Individual</figcaption></figure>
+    <figure><img src="IMG_/Out of Threads.jpg"><figcaption>Out of Threads</figcaption></figure>
+    <figure><img src="IMG_/Reparture.jpg"><figcaption>Reparture</figcaption></figure>
+    <figure><img src="IMG_/ON & OFF.jpg"><figcaption>ON & OFF</figcaption></figure>
+  </div>
+
+  <div class="section">
+    <h2>Digital Arts</h2>
+  </div>
+  <div class="fine-arts">
+    <figure><img src="IMG_/water.jpg"><figcaption>Water under the Bridge</figcaption></figure>
+    <figure><img src="IMG_/MAP12 design_.jpg"><figcaption>MAP 12 T-shirt design</figcaption></figure>
+  </div>
+</body>
