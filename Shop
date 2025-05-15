@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Column Layout with Flexbox</title>
+    <link rel="stylesheet" type="text/css" href="normalize_v8.0.1.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+    body {
+        background-color: #FFF8E7;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem 2rem;
+        background-color: 	#f8ead6; 
+        border-bottom: 1px solid #EFDCC8;
+        flex-wrap: wrap;
+      }
+
+      .navbar a {
+        text-decoration: none;
+        color: #5A4B41; 
+        font-weight: 600;
+        font-size: 1.35rem;
+        padding: 0.5rem 1rem;
+        transition: background-color 0.2s ease;
+      }
+    @media (max-width: 600px) {
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+
+    .navbar a:hover {
+      background-color: #F5D7AF; 
+      border-radius: 4px;
+    }
+
+    h1 {
+        text-align: center;
+        margin-top: 3rem; 
+        margin-bottom: 3rem;
+        transform: translateX(-1rem);
+      }
+      .header-image-container {
+        display: flex;
+        justify-content: center;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+      .section {
+        max-width: 1200px;
+        margin: 2rem auto;
+        padding: 0 2rem;
+      }
+
+      .section h2 {
+        margin-bottom: 1rem;
+        font-size: 1.75rem;
+      }
+
+      .header-image-container img {
+        width: 100%;
+        max-width: 1000px;
+        height: auto;
+        border-radius: 12px;
+        object-fit: cover;
+        display: block;
+      }
+      .shop-section {
+        max-width: 1000px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+        font-family: sans-serif;
+      }
+
+      .shop-section h2,
+      .shop-section h3 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+      }
+
+      .shop-section p {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+
+      .product-list {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .product {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      .product img {
+        width: 200px;       
+        height: auto;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+
+      .product .info h4 {
+        font-size: 1.3rem;
+        margin-bottom: 0.3rem;
+      }
+
+      .product .info p {
+        font-size: 1.05rem;
+        color: #444;
+      }
+      .custom-order {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 3rem;
+        flex-wrap: wrap;
+      }
+
+      .custom-order .text {
+        flex: 1;
+      }
+
+      .custom-order .image {
+        flex: 1;
+      }
+
+      .custom-order .image img {
+        width: 100%;
+        border-radius: 12px;
+      }
+
+      button {
+        margin-top: 1rem;
+        background: #000;
+        color: #fff;
+        border: none;
+        padding: 0.6rem 1rem;
+        font-size: 0.9rem;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background: #333;
+      }
+
+      @media (max-width: 700px) {
+        .product {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .custom-order {
+          flex-direction: column;
+        }
+      }
+      .divider {
+        border: none;
+        height: 2px;
+        background: #ccc;
+        margin: 3rem auto;
+        max-width: 1000px;
+      }
+
+      .order-form {
+        max-width: 600px;
+        margin: 3rem auto;
+        padding: 1.5rem;
+        background-color: #fff8e7;
+        font-family: serif;
+      }
+      .order-form h3 {
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .order-form p {
+        font-size: 0.95rem;
+        margin-bottom: 1.2rem;
+        color: #333;
+      }
+
+      .order-form label {
+        font-weight: 600;
+        margin-top: 1.2rem;
+        margin-bottom: 0.4rem;
+        display: block;
+        font-size: 1.05rem;
+      }
+
+      .order-form input,
+      .order-form select,
+      .order-form textarea {
+        width: 100%;
+        padding: 0.65rem 1rem;
+        font-size: 1rem;
+        border: 1px solid #e8d8c3;
+        background-color: #fffefb;
+        border-radius: 6px;
+        box-sizing: border-box;
+        margin-bottom: 0.8rem;
+      }
+
+      .order-form textarea {
+        min-height: 130px;
+        resize: vertical;
+      }
+
+      .order-form button {
+        background-color: #5a4b41;
+        color: #fff;
+        border: none;
+        padding: 0.8rem;
+        font-size: 1rem;
+        width: 100%;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-top: 1.2rem;
+      }
+
+      .order-form button:hover {
+        background-color: #3f362e;
+      }
+      form label {
+        font-weight: bold;
+        display: block;
+        margin-top: 1.5rem;
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+      }
+
+      select, textarea {
+        width: 100%;
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+        font-family: inherit;
+      }
+      .product-list img {
+  border-radius: 6%;
+  object-fit: cover;
+}
+    </style>
+</head>
+<body>
+    <h1>Shop</h1>
+  <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="shop.html">Shop</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="header-image-container">
+    <img src="IMG_/header image.jpg" alt="Header Image">
+  </div>
+  <section class="shop-section">
+    <h2>NOTICE</h2>
+    <p>To ask questions about a product, please email us via the contact page</a>
+    <br>Be aware that because theses are handmade products, the descriptions and colors may vary the photo.</p>
+  
+    <h3>Best sellers</h3>
+    <div class="product-list">
+      <div class="product">
+        <img src="IMG_/pouch.jpg" alt="Pouch">
+        <div class="info">
+          <h4>Pouch $12</h4>
+          <p>Pouches! <br> width: 2.5" height:4.5" <br> *available in different colors*</p>
+        </div>
+      </div>
+      <div class="product">
+        <img src="IMG_/grey bunny.jpg" alt="Bunny">
+        <div class="info">
+          <h4>Bunny $4</h4>
+          <p>Bunnies! <br>width: 2.5" height:2.5" <br> *available in different colors and sizes*</p>
+        </div>
+      </div>
+    </div>
+  
+    <h3>More Options</h3>
+    <div class="product-list">
+      <div class="product">
+        <img src="IMG_/dino.jpg" alt="Dino">
+        <div class="info">
+          <h4>Dino $7</h4>
+          <p>Cute purple Dino! <br> width: 2.5" height:4.5"</p>
+        </div>
+      </div>
+      <div class="product">
+        <img src="IMG_/frog.jpg" alt="froggies">
+        <div class="info">
+          <h4>Frogs $4</h4>
+          <p>Froggies <br>width: height:  *available in different colors and sizes*</p>
+        </div>
+      </div>
+      <div class="product">
+        <img src="IMG_/octopus.jpg" alt="octopuses">
+        <div class="info">
+          <h4>Octopuses $4</h4>
+          <p>Octopuses! <br>width: height:  *available in different colors and sizes*</p>
+        </div>
+      </div>
+      <div class="product">
+        <img src="IMG_/hand warmer.jpg" alt="hand warmer">
+        <div class="info">
+          <h4>Left hand warmer $8</h4>
+          <p>Left hand only! <br>width: height:  </p>
+        </div>
+      </div>
+      <div class="product">
+        <img src="IMG_/square pouch.jpg" alt="square pouch">
+        <div class="info">
+          <h4>Square pouch $10</h4>
+          <p>Sqaure pouch <br>width: height:  *available in different colors and sizes*</p>
+        </div>
+      </div>
+      <div class="product">
+        <img src="IMG_/daily pouch.jpg" alt="daily pouch">
+        <div class="info">
+          <h4>Daily pouch $10</h4>
+          <p>Sqaure pouch <br>width: height:  *available in different colors and sizes*</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="custom-order">
+      <div class="text">
+        <h3>Custom orders</h3>
+        <p>Custom orders are available for items with **. <br> For other custom orders please contact the studio prior to order for its possibility and payment. Thank you!</p>
+   
+      </div>
+      <div class="image">
+        <img src="IMG_/BEE_3.jpeg" alt="Custom Product">
+      </div>
+    </div>
+  </section>
+  
+  <hr class="divider">
+
+<section class="order-form">
+  <h3>Place an Order</h3>
+  <p>Fill out the form below and we’ll get back to you by email. <br> Pay via zelle: sol16.rena@gmail.com</p>
+  
+  <form action="https://formsubmit.co/sol16.rena@gmail.com" method="post" enctype="text/plain" onsubmit="alert('Your order has been sent! Thank you for shopping from Moribee Studio 🐝')">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="name" required placeholder="Moribee">
+
+    <label for="email">Your Email</label>
+    <input type="email" id="email" name="email" required placeholder="email@domain.com">
+
+    <label for="location">Delivery Location</label>
+    <input type="text" id="location" name="location" required placeholder="e.g. San Jose, CA">
+
+    <label for="item">Choose Item</label>
+      <select id="item" name="item" required>
+        <option value="" disabled selected>Select a product</option>
+        <option value="Pouch $12">Pouch ($12)</option>
+        <option value="Square Pouch $10">Square Pouch ($10)</option>
+        <option value="Daily Pouch $10">Daily pouch ($10)</option>
+        <option value="Dino $7">Dino ($7)</option>
+        <option value="Frogs $4">Frogs ($4)</option>
+        <option value="Octopuses $4">Octopuses ($4)</option>
+        <option value="Bunny $4">Bunnies ($4)</option>
+        <option value="Hand warmer $8">Hand warmer ($8)</option>
+      </select>
+
+    <label for="notes">Custom Notes</label>
+    <textarea id="notes" name="notes" rows="4" placeholder="Color, size, or any custom requests"></textarea>
+
+    <button type="submit">Send Order</button>
+  </form>
+</section>
+</body>
+</html>
